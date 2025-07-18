@@ -30,8 +30,6 @@ from .StudentViews import (
 )
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    
     # Main Views
     path('', HomeView.as_view(), name="home"),
     path('contact', ContactView.as_view(), name="contact"),

@@ -22,14 +22,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'rest_framework',
     'school.apps.SchoolConfig',
-
+    'rest_framework',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -56,6 +57,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'api.wsgi.application'
 
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:5173',  # React's default port
+    # 'http://your-react-app-domain.com',
+]
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
